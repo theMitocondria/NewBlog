@@ -7,9 +7,7 @@ const ejs = require("ejs");
 const lodash=require("lodash");
 const length=100;
 
-// connecting to mongoose Server
-mongoose.connect("mongodb+srv://mitocondria:Dhruv1210@cluster0.x4clyh0.mongodb.net/DailyDB");
-
+mongoose.connect("mongodb+srv://dhruv:Dhruv@cluster0.rapcoui.mongodb.net/blogDB")
 const app = express();
 const posts=[];
 
@@ -82,7 +80,8 @@ app.get("/compose",(req,res)=>{
 app.post("/",(req,res)=>{
   const content1=req.body.newJournalContent;
   const title=req.body.newJournalTitle;
-var content = content1.substring(length);
+  //console.log(content1);
+var content = content1.substring(0,length);
   const post1=new Post({
     head:title,
     data:content
