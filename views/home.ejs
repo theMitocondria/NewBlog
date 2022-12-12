@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs"); %>
+
+<h1>Hello</h1>
+<p><%=content%></p>
+
+<% for(let i=0;i<arr.length;i++){%>
+       <h2><%=arr[i].head%></h2>
+       <span>
+         <%=arr[i].data.substring(0,100) %>....
+       </span>
+       <a href="/posts/<%=arr[i].head%>">Read More</a>
+<%}%>
+
+<%- include("partials/footer.ejs"); %>
