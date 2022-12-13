@@ -40,7 +40,7 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 // get requests
 app.get("/",(req,res)=>{
   Post.find({},(err,posts)=>{
-    res.render("home",{
+    res.render("index",{
       content:homeStartingContent,
       arr:posts
     })
@@ -89,7 +89,7 @@ var content = content1.substring(0,length);
 
   post1.save((err)=>{
     if(!err){
-      res.render("/home");
+      res.render("/index");
     }
   });
 //console.log(posts);
